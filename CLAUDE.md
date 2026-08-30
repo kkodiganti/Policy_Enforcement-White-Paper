@@ -25,6 +25,7 @@ This paper's subject is **technical/architectural policy enforcement inside an e
 - `assets/` — 9 hand-authored SVG charts/diagrams, all embedded in the white paper and validated via `sips` (see inventory below), plus `assets/export-png/` holding the corresponding rendered PNGs per Chart conventions below.
 - `Policy-Enforcement-White-Paper.pdf` — the SSRN-ready PDF export of the white paper. A build artifact of the markdown, not hand-edited — regenerate via the recipe in "PDF export" below any time `Policy-Enforcement-White-Paper.md` or the `assets/*.svg` files change.
 - `pdf-template.html` — the reusable HTML/CSS shell the PDF export wraps the paper's content in (Letter page size, Georgia serif, 1in margins, centered byline styling). Edit this if the PDF's typography/layout needs to change.
+- `SSRN-SUBMISSION.md` — prep sheet for the SSRN submission form: keywords, verified SSRN classifications, and draft Declaration of Interest / Funder / Ethics Approval statements. Not part of the paper itself. The Declaration of Interest has two undecided variants (name Capital One as employer, or keep it anonymized to match the byline) — resolve before actually submitting.
 
 ## PDF export
 
