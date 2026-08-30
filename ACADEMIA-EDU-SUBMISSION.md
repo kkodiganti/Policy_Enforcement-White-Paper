@@ -1,12 +1,14 @@
 # Academia.edu Submission Reference
 
-Reusable answers for uploading this paper to academia.edu. Not part of the paper itself — a prep sheet, same purpose as `SSRN-SUBMISSION.md`.
+Reusable answers for uploading this paper to academia.edu. Academia.edu is a separate, independent platform from SSRN — this paper is being uploaded there directly, not as a cross-post or derivative of an SSRN listing, so nothing here should assume or reference an SSRN publication. Not part of the paper itself — a prep sheet, same purpose as `SSRN-SUBMISSION.md`, but for a distinct, unrelated destination.
 
 ## Publication Name
 
-**"SSRN Electronic Journal"** — this is the standard, widely-recognized citation venue name for papers hosted on SSRN (Elsevier's SSRN operates as a formal indexed "journal" wrapper for citation purposes, ISSN 1556-5068; citation indexes and scholarly databases list SSRN-hosted working papers under this name). Use it once this paper is actually posted on SSRN, since it's honestly describing where the paper is published.
+Academia.edu's "Publication Name" field is functionally their journal-name field — it's asking where the paper was formally published (journal, conference proceedings, a working-paper series with a named venue). This paper has no such venue: it's independent, self-published work with no journal affiliation, so naming one would misrepresent it.
 
-**If uploading to academia.edu before or independent of the SSRN submission:** don't use "SSRN Electronic Journal" yet — either leave the field blank or mark the paper as a working paper / unpublished manuscript, whichever academia.edu's upload flow offers, and revisit this field once the SSRN posting is live.
+**Recommended: leave the field blank**, if academia.edu's upload flow allows that for a non-journal upload (it treats journal/publication info as optional, editable citation metadata, not a mandatory field).
+
+**If the form won't accept a blank value**, use a plain, honest label instead of a real-sounding venue name: **"Independent Publication"** or **"Self-Published White Paper."** Don't invent or borrow a venue name (including anything SSRN-related) just to fill the field.
 
 ## Research Interests (max 20)
 
