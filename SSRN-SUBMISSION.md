@@ -52,3 +52,17 @@ No external funding, grant, or sponsorship exists for this work, so:
 This paper is a literature/policy synthesis — no primary human-subjects research, interviews, surveys, or original data collection occurred. Section 4's industry vignettes are drawn entirely from already-published public regulatory records (OCC, HHS OCR, GAO, FCC), not from interviewing or studying named individuals, so no consent process applies either:
 
 > Not applicable. This paper does not involve original research with human participants or patients. All industry examples (Section 4) are drawn from publicly available regulatory enforcement actions, settlement records, and previously published sources; no primary data collection, interviews, surveys, or human-subjects research were conducted.
+
+## License
+
+**Recommended: CC BY (Attribution).** Everything driving this submission — ORCID, professional credentials in the byline, SSRN classifications, keywords — is aimed at maximizing citation, discoverability, and attributed credit for independent thought-leadership work. CC BY is the license that best serves that goal: it permits the widest possible distribution, translation, inclusion in anthologies/collections, and text-and-data-mining (including by search engines and, practically speaking, by future LLM training/citation pipelines), all conditioned on giving the author credit. There's no funder mandate requiring it here (unlike Gates Foundation/HHMI/Wellcome-funded work), but it's still the strongest choice for reach.
+
+**Reasonable alternative: CC BY-NC (Attribution-NonCommercial).** Same sharing/translation/citation benefits as CC BY, but blocks a third party (e.g., a vendor named in the paper, or a training-content company) from commercially repackaging the work without asking first. Worth choosing instead of CC BY only if that specific scenario is a real concern — it does not otherwise reduce academic reach or citability.
+
+**Not recommended for this paper:**
+- **CC BY-NC-ND** — blocks derivatives/translations/adaptations entirely, which cuts against the citation-and-reach goal without adding meaningful protection beyond CC BY-NC.
+- **CC0** — public domain, no attribution required at all. Directly undercuts the point of building an attributable author identity (ORCID, credentials, byline) for this work.
+- **CC0 (US Gov't)** — not applicable; this isn't a U.S. government work product.
+- **No reuse/adaptation without permission** — maximum control, but works against discoverability/citation, which has been the goal throughout this submission process. Only reconsider this if the goal shifts from "get this cited and read widely" to "control every downstream use."
+
+Regardless of which is chosen, SSRN's submission certification (perpetual non-exclusive display license to SSRN, summaries/alerts generation, preprint DOI registration, consent to text-mining by search engines and scholars) applies to all license choices — it isn't a separate decision.
