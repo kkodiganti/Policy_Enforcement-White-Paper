@@ -1,0 +1,28 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="900" height="520" fill="#fcfcfb"/>
+
+  <text x="450" y="40" font-size="22" font-weight="700" fill="#0b0b0b" text-anchor="middle">Zanzibar in Production</text>
+  <text x="450" y="64" font-size="14" fill="#898781" text-anchor="middle">Google's centralized authorization system, sustained over 3 years (Pang et al., 2019)</text>
+
+  <!-- Tile 1 -->
+  <rect x="40" y="95" width="380" height="175" rx="14" fill="#eaf1fb" stroke="#2a78d6" stroke-width="2"/>
+  <text x="230" y="190" font-size="42" font-weight="700" fill="#2a78d6" text-anchor="middle">Trillions</text>
+  <text x="230" y="222" font-size="14" fill="#0b0b0b" text-anchor="middle">of access-control entries</text>
+
+  <!-- Tile 2 -->
+  <rect x="480" y="95" width="380" height="175" rx="14" fill="#eaf1fb" stroke="#2a78d6" stroke-width="2"/>
+  <text x="670" y="190" font-size="42" font-weight="700" fill="#2a78d6" text-anchor="middle">Millions / sec</text>
+  <text x="670" y="222" font-size="14" fill="#0b0b0b" text-anchor="middle">authorization checks</text>
+
+  <!-- Tile 3 -->
+  <rect x="40" y="295" width="380" height="175" rx="14" fill="#eaf1fb" stroke="#2a78d6" stroke-width="2"/>
+  <text x="230" y="390" font-size="42" font-weight="700" fill="#2a78d6" text-anchor="middle">&lt; 10 ms</text>
+  <text x="230" y="422" font-size="14" fill="#0b0b0b" text-anchor="middle">95th-percentile latency</text>
+
+  <!-- Tile 4 -->
+  <rect x="480" y="295" width="380" height="175" rx="14" fill="#eaf1fb" stroke="#2a78d6" stroke-width="2"/>
+  <text x="670" y="390" font-size="42" font-weight="700" fill="#2a78d6" text-anchor="middle">&gt; 99.999%</text>
+  <text x="670" y="422" font-size="14" fill="#0b0b0b" text-anchor="middle">availability, 3 years running</text>
+
+  <text x="450" y="500" font-size="12.5" fill="#52514e" text-anchor="middle">The clearest evidence in this paper that centralized enforcement holds up operationally, not just conceptually (Section 3.3).</text>
+</svg>

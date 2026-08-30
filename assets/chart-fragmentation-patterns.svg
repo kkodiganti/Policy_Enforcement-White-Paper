@@ -1,0 +1,93 @@
+<svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1200" height="700" fill="#fcfcfb"/>
+
+  <text x="600" y="36" font-size="22" font-weight="700" fill="#0b0b0b" text-anchor="middle">Three Microservice Authorization Patterns</text>
+  <text x="600" y="58" font-size="14" fill="#898781" text-anchor="middle">Barabanov &amp; Makrushin (2020)</text>
+
+  <!-- divider lines -->
+  <line x1="405" y1="85" x2="405" y2="640" stroke="#e1e0d9" stroke-width="1.5"/>
+  <line x1="795" y1="85" x2="795" y2="640" stroke="#e1e0d9" stroke-width="1.5"/>
+
+  <!-- PANEL 1: Decentralized -->
+  <text x="220" y="105" font-size="17" font-weight="700" fill="#eb6834" text-anchor="middle">Decentralized</text>
+
+  <rect x="125" y="150" width="190" height="55" rx="8" fill="#ffffff" stroke="#eb6834" stroke-width="2"/>
+  <text x="220" y="172" font-size="13.5" font-weight="700" fill="#0b0b0b" text-anchor="middle">Service A</text>
+  <text x="220" y="189" font-size="11" fill="#898781" text-anchor="middle">own PDP + PEP</text>
+
+  <rect x="125" y="230" width="190" height="55" rx="8" fill="#ffffff" stroke="#eb6834" stroke-width="2"/>
+  <text x="220" y="252" font-size="13.5" font-weight="700" fill="#0b0b0b" text-anchor="middle">Service B</text>
+  <text x="220" y="269" font-size="11" fill="#898781" text-anchor="middle">own PDP + PEP</text>
+
+  <rect x="125" y="310" width="190" height="55" rx="8" fill="#ffffff" stroke="#eb6834" stroke-width="2"/>
+  <text x="220" y="332" font-size="13.5" font-weight="700" fill="#0b0b0b" text-anchor="middle">Service C</text>
+  <text x="220" y="349" font-size="11" fill="#898781" text-anchor="middle">own PDP + PEP</text>
+
+  <text x="220" y="415" font-size="12" fill="#52514e" text-anchor="middle">Each service authors and enforces</text>
+  <text x="220" y="433" font-size="12" fill="#52514e" text-anchor="middle">its own rules, independently.</text>
+  <text x="220" y="460" font-size="12" font-weight="700" fill="#0b0b0b" text-anchor="middle">Rules drift as the system scales.</text>
+
+  <!-- PANEL 2: Centralized, single PDP -->
+  <text x="600" y="105" font-size="17" font-weight="700" fill="#2a78d6" text-anchor="middle">Centralized — Single PDP</text>
+
+  <rect x="440" y="160" width="150" height="55" rx="8" fill="#ffffff" stroke="#898781" stroke-width="2"/>
+  <text x="515" y="182" font-size="13.5" font-weight="700" fill="#0b0b0b" text-anchor="middle">Service A</text>
+  <text x="515" y="199" font-size="11" fill="#898781" text-anchor="middle">PEP only</text>
+
+  <rect x="440" y="240" width="150" height="55" rx="8" fill="#ffffff" stroke="#898781" stroke-width="2"/>
+  <text x="515" y="262" font-size="13.5" font-weight="700" fill="#0b0b0b" text-anchor="middle">Service B</text>
+  <text x="515" y="279" font-size="11" fill="#898781" text-anchor="middle">PEP only</text>
+
+  <rect x="440" y="320" width="150" height="55" rx="8" fill="#ffffff" stroke="#898781" stroke-width="2"/>
+  <text x="515" y="342" font-size="13.5" font-weight="700" fill="#0b0b0b" text-anchor="middle">Service C</text>
+  <text x="515" y="359" font-size="11" fill="#898781" text-anchor="middle">PEP only</text>
+
+  <rect x="640" y="150" width="130" height="240" rx="10" fill="#eaf1fb" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="705" y="260" font-size="18" font-weight="700" fill="#0b0b0b" text-anchor="middle">PDP</text>
+  <text x="705" y="280" font-size="11.5" fill="#52514e" text-anchor="middle">shared, network</text>
+  <text x="705" y="295" font-size="11.5" fill="#52514e" text-anchor="middle">call per request</text>
+
+  <line x1="593" y1="187" x2="636" y2="230" stroke="#52514e" stroke-width="1.75"/>
+  <polygon points="639,233 632,224 627,233" fill="#52514e"/>
+  <line x1="593" y1="267" x2="636" y2="267" stroke="#52514e" stroke-width="1.75"/>
+  <polygon points="639,267 630,262 630,272" fill="#52514e"/>
+  <line x1="593" y1="347" x2="636" y2="304" stroke="#52514e" stroke-width="1.75"/>
+  <polygon points="639,301 627,301 632,310" fill="#52514e"/>
+
+  <text x="600" y="415" font-size="12" fill="#52514e" text-anchor="middle">Policy centrally authored and evaluated.</text>
+  <text x="600" y="433" font-size="12" fill="#52514e" text-anchor="middle">Updates ship without redeploying services.</text>
+  <text x="600" y="460" font-size="12" font-weight="700" fill="#0b0b0b" text-anchor="middle">Network round-trip on every request.</text>
+
+  <!-- PANEL 3: Centralized, embedded PDP -->
+  <text x="980" y="105" font-size="17" font-weight="700" fill="#1baf7a" text-anchor="middle">Centralized — Embedded PDP</text>
+
+  <rect x="825" y="160" width="150" height="55" rx="8" fill="#eafaf3" stroke="#1baf7a" stroke-width="2"/>
+  <text x="900" y="182" font-size="13.5" font-weight="700" fill="#0b0b0b" text-anchor="middle">Service A</text>
+  <text x="900" y="199" font-size="10.5" fill="#898781" text-anchor="middle">PDP + PEP (cached)</text>
+
+  <rect x="825" y="240" width="150" height="55" rx="8" fill="#eafaf3" stroke="#1baf7a" stroke-width="2"/>
+  <text x="900" y="262" font-size="13.5" font-weight="700" fill="#0b0b0b" text-anchor="middle">Service B</text>
+  <text x="900" y="279" font-size="10.5" fill="#898781" text-anchor="middle">PDP + PEP (cached)</text>
+
+  <rect x="825" y="320" width="150" height="55" rx="8" fill="#eafaf3" stroke="#1baf7a" stroke-width="2"/>
+  <text x="900" y="342" font-size="13.5" font-weight="700" fill="#0b0b0b" text-anchor="middle">Service C</text>
+  <text x="900" y="359" font-size="10.5" fill="#898781" text-anchor="middle">PDP + PEP (cached)</text>
+
+  <rect x="1025" y="150" width="130" height="240" rx="10" fill="#ffffff" stroke="#eb6834" stroke-width="2.5"/>
+  <text x="1090" y="260" font-size="17" font-weight="700" fill="#0b0b0b" text-anchor="middle">PAP</text>
+  <text x="1090" y="280" font-size="11" fill="#52514e" text-anchor="middle">policy sync,</text>
+  <text x="1090" y="295" font-size="11" fill="#52514e" text-anchor="middle">async / cached</text>
+
+  <line x1="978" y1="187" x2="1021" y2="230" stroke="#eb6834" stroke-width="1.75" stroke-dasharray="4,3"/>
+  <polygon points="1024,233 1017,224 1012,233" fill="#eb6834"/>
+  <line x1="978" y1="267" x2="1021" y2="267" stroke="#eb6834" stroke-width="1.75" stroke-dasharray="4,3"/>
+  <polygon points="1024,267 1015,262 1015,272" fill="#eb6834"/>
+  <line x1="978" y1="347" x2="1021" y2="304" stroke="#eb6834" stroke-width="1.75" stroke-dasharray="4,3"/>
+  <polygon points="1024,301 1012,301 1017,310" fill="#eb6834"/>
+
+  <text x="980" y="415" font-size="12" fill="#52514e" text-anchor="middle">Local evaluation, no per-request network call.</text>
+  <text x="980" y="433" font-size="12" fill="#52514e" text-anchor="middle">Still centrally authored via the PAP.</text>
+  <text x="980" y="460" font-size="12" font-weight="700" fill="#0b0b0b" text-anchor="middle">Cache staleness needs its own discipline.</text>
+
+  <text x="600" y="670" font-size="12" fill="#898781" text-anchor="middle">This paper's framework (Section 3.1) treats either centralized pattern as acceptable — the requirement is one authored, one evaluated source of truth.</text>
+</svg>

@@ -1,0 +1,66 @@
+<svg viewBox="0 0 1220 520" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1220" height="520" fill="#fcfcfb"/>
+
+  <text x="610" y="40" font-size="22" font-weight="700" fill="#0b0b0b" text-anchor="middle">Six Recurring Policy Enforcement Failure Modes</text>
+  <text x="610" y="64" font-size="14" fill="#898781" text-anchor="middle">Section 2 — each maps to a specific part of the framework proposed in Section 3</text>
+
+  <!-- Card 1 -->
+  <rect x="40" y="100" width="360" height="180" rx="12" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+  <circle cx="76" cy="136" r="20" fill="#2a78d6"/>
+  <text x="76" y="142" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+  <text x="220" y="142" font-size="16" font-weight="700" fill="#0b0b0b" text-anchor="middle">Fragmentation &amp; Duplication</text>
+  <text x="220" y="185" font-size="13" fill="#52514e" text-anchor="middle">The same rule reimplemented</text>
+  <text x="220" y="205" font-size="13" fill="#52514e" text-anchor="middle">independently per service until</text>
+  <text x="220" y="225" font-size="13" fill="#52514e" text-anchor="middle">it drifts apart.</text>
+  <text x="220" y="258" font-size="11" fill="#898781" text-anchor="middle">→ Framework Part 1: single enforcement point</text>
+
+  <!-- Card 2 -->
+  <rect x="430" y="100" width="360" height="180" rx="12" fill="#ffffff" stroke="#eb6834" stroke-width="2"/>
+  <circle cx="466" cy="136" r="20" fill="#eb6834"/>
+  <text x="466" y="142" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+  <text x="610" y="142" font-size="16" font-weight="700" fill="#0b0b0b" text-anchor="middle">Timing Gaps</text>
+  <text x="610" y="185" font-size="13" fill="#52514e" text-anchor="middle">Detective-only controls catch a</text>
+  <text x="610" y="205" font-size="13" fill="#52514e" text-anchor="middle">violation only after it already</text>
+  <text x="610" y="225" font-size="13" fill="#52514e" text-anchor="middle">happened.</text>
+  <text x="610" y="258" font-size="11" fill="#898781" text-anchor="middle">→ Framework Part 2: continuous evaluation</text>
+
+  <!-- Card 3 -->
+  <rect x="820" y="100" width="360" height="180" rx="12" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/>
+  <circle cx="856" cy="136" r="20" fill="#1baf7a"/>
+  <text x="856" y="142" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+  <text x="1000" y="142" font-size="16" font-weight="700" fill="#0b0b0b" text-anchor="middle">Semantic Translation Gap</text>
+  <text x="1000" y="185" font-size="13" fill="#52514e" text-anchor="middle">Written policy and the code</text>
+  <text x="1000" y="205" font-size="13" fill="#52514e" text-anchor="middle">enforcing it silently diverge</text>
+  <text x="1000" y="225" font-size="13" fill="#52514e" text-anchor="middle">over time.</text>
+  <text x="1000" y="258" font-size="11" fill="#898781" text-anchor="middle">→ Framework Part 3: policy-as-code, named owner</text>
+
+  <!-- Card 4 -->
+  <rect x="40" y="305" width="360" height="180" rx="12" fill="#ffffff" stroke="#2a78d6" stroke-width="2"/>
+  <circle cx="76" cy="341" r="20" fill="#2a78d6"/>
+  <text x="76" y="347" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+  <text x="220" y="347" font-size="16" font-weight="700" fill="#0b0b0b" text-anchor="middle">Contextual &amp; Identity Staleness</text>
+  <text x="220" y="390" font-size="13" fill="#52514e" text-anchor="middle">Entitlements and attributes go</text>
+  <text x="220" y="410" font-size="13" fill="#52514e" text-anchor="middle">stale, unrevoked, unrefreshed</text>
+  <text x="220" y="430" font-size="13" fill="#52514e" text-anchor="middle">at decision time.</text>
+  <text x="220" y="463" font-size="11" fill="#898781" text-anchor="middle">→ Framework Part 2: continuous evaluation</text>
+
+  <!-- Card 5 -->
+  <rect x="430" y="305" width="360" height="180" rx="12" fill="#ffffff" stroke="#eb6834" stroke-width="2"/>
+  <circle cx="466" cy="341" r="20" fill="#eb6834"/>
+  <text x="466" y="347" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+  <text x="610" y="347" font-size="16" font-weight="700" fill="#0b0b0b" text-anchor="middle">Coverage Gaps</text>
+  <text x="610" y="390" font-size="13" fill="#52514e" text-anchor="middle">Legacy systems and break-glass</text>
+  <text x="610" y="410" font-size="13" fill="#52514e" text-anchor="middle">paths bypass the enforcement</text>
+  <text x="610" y="430" font-size="13" fill="#52514e" text-anchor="middle">point entirely.</text>
+  <text x="610" y="463" font-size="11" fill="#898781" text-anchor="middle">→ Coverage: extending Part 1 deliberately</text>
+
+  <!-- Card 6 -->
+  <rect x="820" y="305" width="360" height="180" rx="12" fill="#ffffff" stroke="#1baf7a" stroke-width="2"/>
+  <circle cx="856" cy="341" r="20" fill="#1baf7a"/>
+  <text x="856" y="347" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">6</text>
+  <text x="1000" y="347" font-size="16" font-weight="700" fill="#0b0b0b" text-anchor="middle">Governance &amp; Accountability Gaps</text>
+  <text x="1000" y="390" font-size="13" fill="#52514e" text-anchor="middle">No named owner closes the gap</text>
+  <text x="1000" y="410" font-size="13" fill="#52514e" text-anchor="middle">between the written policy and</text>
+  <text x="1000" y="430" font-size="13" fill="#52514e" text-anchor="middle">the enforcing system.</text>
+  <text x="1000" y="463" font-size="11" fill="#898781" text-anchor="middle">→ Framework Part 3: policy-as-code, named owner</text>
+</svg>

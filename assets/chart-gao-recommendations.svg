@@ -1,0 +1,28 @@
+<svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="900" height="360" fill="#fcfcfb"/>
+
+  <text x="450" y="40" font-size="22" font-weight="700" fill="#0b0b0b" text-anchor="middle">Cybersecurity Recommendations: Issued vs. Still Open</text>
+  <text x="450" y="64" font-size="14" fill="#898781" text-anchor="middle">GAO high-risk reporting, cumulative since 2010, status as of May 2024 (GAO-24-107231, 2024)</text>
+
+  <!-- Segmented bar -->
+  <defs>
+    <clipPath id="barClip">
+      <rect x="60" y="140" width="780" height="80" rx="8"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#barClip)">
+    <rect x="60" y="140" width="505" height="80" fill="#1baf7a"/>
+    <rect x="565" y="140" width="275" height="80" fill="#eb6834"/>
+  </g>
+
+  <text x="312" y="176" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">1,043</text>
+  <text x="312" y="198" font-size="12.5" fill="#ffffff" text-anchor="middle">implemented (65%)</text>
+
+  <text x="702" y="176" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">567</text>
+  <text x="702" y="198" font-size="12.5" fill="#ffffff" text-anchor="middle">still open (35%)</text>
+
+  <text x="450" y="255" font-size="15" fill="#0b0b0b" text-anchor="middle">1,610 cybersecurity recommendations issued since 2010</text>
+
+  <text x="450" y="300" font-size="12.5" fill="#52514e" text-anchor="middle">A recommendation that stays open for years is evidence no one was made accountable for closing the gap</text>
+  <text x="450" y="318" font-size="12.5" fill="#52514e" text-anchor="middle">between the finding and the fix, not that the underlying control was hard to build (Section 2.6).</text>
+</svg>

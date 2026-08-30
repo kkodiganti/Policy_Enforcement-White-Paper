@@ -1,0 +1,75 @@
+<svg viewBox="0 0 960 620" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="960" height="620" fill="#fcfcfb"/>
+
+  <text x="480" y="36" font-size="22" font-weight="700" fill="#0b0b0b" text-anchor="middle">XACML Reference Architecture</text>
+  <text x="480" y="58" font-size="14" fill="#898781" text-anchor="middle">Policy Decision, Enforcement, Administration, and Information Points (OASIS, 2017)</text>
+
+  <!-- PAP -->
+  <rect x="390" y="90" width="180" height="70" rx="10" fill="#ffffff" stroke="#eb6834" stroke-width="2.5"/>
+  <text x="480" y="120" font-size="18" font-weight="700" fill="#0b0b0b" text-anchor="middle">PAP</text>
+  <text x="480" y="140" font-size="12.5" fill="#52514e" text-anchor="middle">Policy Administration Point</text>
+  <text x="480" y="155" font-size="11" fill="#898781" text-anchor="middle">authors the policy</text>
+
+  <!-- PDP -->
+  <rect x="385" y="230" width="190" height="130" rx="10" fill="#eaf1fb" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="480" y="264" font-size="20" font-weight="700" fill="#0b0b0b" text-anchor="middle">PDP</text>
+  <text x="480" y="285" font-size="12.5" fill="#52514e" text-anchor="middle">Policy Decision Point</text>
+  <text x="480" y="304" font-size="11" fill="#898781" text-anchor="middle">evaluates the request</text>
+  <text x="480" y="319" font-size="11" fill="#898781" text-anchor="middle">against policy and</text>
+  <text x="480" y="334" font-size="11" fill="#898781" text-anchor="middle">renders a decision</text>
+
+  <!-- PIP -->
+  <rect x="640" y="255" width="210" height="80" rx="10" fill="#ffffff" stroke="#1baf7a" stroke-width="2.5"/>
+  <text x="745" y="288" font-size="18" font-weight="700" fill="#0b0b0b" text-anchor="middle">PIP</text>
+  <text x="745" y="308" font-size="12.5" fill="#52514e" text-anchor="middle">Policy Information Point</text>
+  <text x="745" y="323" font-size="11" fill="#898781" text-anchor="middle">supplies attribute values</text>
+
+  <!-- Subject/Request -->
+  <rect x="30" y="480" width="180" height="70" rx="10" fill="#ffffff" stroke="#898781" stroke-width="2"/>
+  <text x="120" y="510" font-size="15" font-weight="700" fill="#0b0b0b" text-anchor="middle">Subject</text>
+  <text x="120" y="528" font-size="12" fill="#52514e" text-anchor="middle">makes a request</text>
+
+  <!-- PEP -->
+  <rect x="390" y="480" width="180" height="70" rx="10" fill="#eaf1fb" stroke="#2a78d6" stroke-width="2.5"/>
+  <text x="480" y="510" font-size="18" font-weight="700" fill="#0b0b0b" text-anchor="middle">PEP</text>
+  <text x="480" y="528" font-size="12" fill="#52514e" text-anchor="middle">Policy Enforcement Point</text>
+
+  <!-- Resource -->
+  <rect x="770" y="480" width="160" height="70" rx="10" fill="#ffffff" stroke="#898781" stroke-width="2"/>
+  <text x="850" y="510" font-size="15" font-weight="700" fill="#0b0b0b" text-anchor="middle">Resource</text>
+  <text x="850" y="528" font-size="12" fill="#52514e" text-anchor="middle">what is being guarded</text>
+
+  <!-- Arrows: main request/response flow -->
+  <line x1="210" y1="515" x2="386" y2="515" stroke="#52514e" stroke-width="2"/>
+  <polygon points="390,515 380,510 380,520" fill="#52514e"/>
+  <text x="300" y="507" font-size="11.5" fill="#52514e" text-anchor="middle">1. request</text>
+
+  <line x1="571" y1="515" x2="766" y2="515" stroke="#52514e" stroke-width="2"/>
+  <polygon points="770,515 760,510 760,520" fill="#52514e"/>
+  <text x="668" y="507" font-size="11.5" fill="#52514e" text-anchor="middle">5. enforce (allow / deny)</text>
+
+  <!-- PEP <-> PDP -->
+  <line x1="465" y1="477" x2="465" y2="367" stroke="#52514e" stroke-width="2"/>
+  <polygon points="465,363 460,373 470,373" fill="#52514e"/>
+  <text x="410" y="425" font-size="11.5" fill="#52514e" text-anchor="middle">2. authorize?</text>
+
+  <line x1="497" y1="363" x2="497" y2="477" stroke="#52514e" stroke-width="2"/>
+  <polygon points="497,481 492,471 502,471" fill="#52514e"/>
+  <text x="555" y="425" font-size="11.5" fill="#52514e" text-anchor="middle">4. decision</text>
+
+  <!-- PDP <-> PIP -->
+  <line x1="575" y1="280" x2="633" y2="280" stroke="#52514e" stroke-width="2"/>
+  <polygon points="637,280 627,275 627,285" fill="#52514e"/>
+
+  <line x1="637" y1="310" x2="579" y2="310" stroke="#52514e" stroke-width="2"/>
+  <polygon points="575,310 585,305 585,315" fill="#52514e"/>
+  <text x="605" y="248" font-size="11.5" fill="#52514e" text-anchor="middle">3. attributes</text>
+
+  <!-- PAP -> PDP, dashed, design-time -->
+  <line x1="480" y1="163" x2="480" y2="223" stroke="#eb6834" stroke-width="2" stroke-dasharray="5,4"/>
+  <polygon points="480,227 475,217 485,217" fill="#eb6834"/>
+  <text x="595" y="198" font-size="11.5" fill="#898781" text-anchor="middle">policy rules</text>
+  <text x="595" y="212" font-size="10.5" fill="#898781" text-anchor="middle">(design time, not per-request)</text>
+
+  <text x="480" y="590" font-size="11.5" fill="#898781" text-anchor="middle">Every request is evaluated individually through this loop — nothing here is a one-time, session-start check.</text>
+</svg>

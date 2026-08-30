@@ -12,15 +12,37 @@ This is a content repository, not a software project — there is no build, lint
 
 **First editorial pass complete.** The draft has had one editorial/tone pass: removed a bracketed process note that had leaked into the reader-facing title block (title-finalization status belongs only here in CLAUDE.md), cut the near-verbatim repetition of the six-item failure-mode list across the Abstract/Problem Statement/Conclusion (Conclusion now recaps by category name instead of re-deriving each example), fixed a "rather than" construction that had drifted into a repeated rhetorical cadence (was hitting 2–3 uses per sentence in places, notably Section 3.1's three framework parts), and rewrote several templated "flagged honestly" disclaimer sentences that had all converged on the same shape ("X, not Y — stated plainly rather than glossed over") into more varied, plainly-stated prose. Not yet done: a pass for overall length and whether the six-category taxonomy (Section 2) is introduced in the clearest order for a first-time reader. Treat further citation work the same way as before: research a real source or leave a gap explicitly flagged, never invent a statistic or case study to fill one.
 
+**Visual assets complete.** All 9 planned SVG charts/diagrams are built, validated, and embedded in the paper — see "Visual assets" below for the inventory and the `sips` rendering techniques learned while building them.
+
 ## Scope
 
 This paper's subject is **technical/architectural policy enforcement inside an enterprise**: policy-as-code, Policy Decision Point / Policy Enforcement Point (PDP/PEP) architecture, RBAC/ABAC/ReBAC authorization models, and centralized policy engines, contrasted with fragmented, per-service, hardcoded enforcement. It is explicitly *not* a broad people/process/compliance-training paper — HR conduct policy, legal/regulatory policy text itself, and audit-only GRC tooling are out of scope except where they motivate a technical control. Enforcement *timing* (preventive vs. detective vs. corrective) and enforcement *placement* (gateway, service mesh, application code, database, human review) are treated as first-class architectural variables, not implementation detail.
 
 ## Files
 
-- `Policy-Enforcement-White-Paper.md` — the white paper itself. Working title: *Policy Enforcement in the Enterprise: From Fragmented Controls to a Unified Enforcement Framework*. Section skeleton only right now (see Document conventions for the required section order). Thesis (working, to be refined once research lands): most policy enforcement failures are not rule-design failures or training failures but infrastructure failures — policy logic is duplicated and drifts across services because there is no single enforcement point, no consistent timing model, and no named ownership connecting the written policy to the code that enforces it.
+- `Policy-Enforcement-White-Paper.md` — the white paper itself. Working title: *Policy Enforcement in the Enterprise: From Fragmented Controls to a Unified Enforcement Framework*. First full draft complete, one editorial/tone pass done (see Status below). Thesis: most policy enforcement failures are not rule-design failures or training failures but infrastructure failures — policy logic is duplicated and drifts across services because there is no single enforcement point, no consistent timing model, and no named ownership connecting the written policy to the code that enforces it.
 - `Policy-Enforcement-White-Paper-Research.md` — the sourcing backbone: compiled links and figures, organized by taxonomy category (mirrors the white paper's Section 2 structure, the same way the Data-Quality paper's research file mirrors its taxonomy rather than organizing by industry).
-- `assets/` — not created yet. Will hold chart SVGs once the paper's figures are decided (see Chart conventions below for the style to follow when they're added).
+- `assets/` — 9 hand-authored SVG charts/diagrams, all embedded in the white paper and validated via `sips` (see inventory below), plus `assets/export-png/` holding the corresponding rendered PNGs per Chart conventions below.
+
+## Visual assets
+
+All 9 are hand-authored SVG (not generated from a script or Mermaid — a deliberate choice, matching this repo's convention over the ease of diagram-as-code), embedded in `Policy-Enforcement-White-Paper.md` via plain `![alt](assets/...)` links, and validated by rendering to `assets/export-png/*.png` with `sips` and visually checking the PNG. If a figure's underlying numbers or argument change, edit the SVG directly and re-validate — don't regenerate from scratch.
+
+| File | Used in | Content |
+|---|---|---|
+| `chart-taxonomy-overview.svg` | Section 2 intro | The six failure-mode categories, each tagged with which Section 3 framework part addresses it |
+| `chart-fragmentation-patterns.svg` | Section 2.1 / 3.2 | The three Barabanov & Makrushin (2020) patterns: decentralized, centralized-single-PDP, centralized-embedded-PDP |
+| `chart-credential-breach-stats.svg` | Section 2.4 | Verizon DBIR: 28% / 39% credential figures |
+| `chart-entitlement-sprawl.svg` | Section 2.4 | Veza entitlement/dormant/orphaned-account figures — dashed border + "VENDOR-REPORTED, ILLUSTRATIVE" badge, deliberately distinct styling from the primary-sourced charts |
+| `chart-gao-recommendations.svg` | Section 2.6 | GAO's 1,610 issued vs. 567 still-open recommendations, as a segmented progress bar |
+| `chart-framework-overview.svg` | Section 3.1 | The three framework parts + coverage as a cross-cutting discipline, at a glance |
+| `chart-pdp-pep-architecture.svg` | Section 3.2 | XACML PDP/PEP/PAP/PIP reference architecture |
+| `chart-rbac-abac-rebac.svg` | Section 3.2 | RBAC vs. ABAC vs. ReBAC comparison |
+| `chart-zanzibar-scale.svg` | Section 3.3 | Zanzibar's production figures (trillions of ACLs, sub-10ms p95, 99.999% availability) |
+
+**Two `sips` rendering techniques learned building these, beyond the `tspan`/`dy` caveat already in Chart conventions below:**
+- Arrowheads must be manually-drawn `<polygon>` triangles at each line's destination, not `<marker>`/`marker-end` — `sips` doesn't reliably rasterize SVG markers, so a diagram can look correct in the raw SVG and have invisible arrows in the validated PNG. First diagram draft (`chart-pdp-pep-architecture.svg`) hit this; all 9 files use the polygon approach.
+- Rounded-end segmented/progress bars (e.g. `chart-gao-recommendations.svg`) need a `<clipPath>` with a single rounded `<rect>`, then flat-edged colored segments drawn inside a `<g clip-path="...">` — two separately-rounded overlapping rects leave a visible notch where they meet. `clipPath` itself renders correctly in `sips` (unlike `marker`), confirmed working.
 
 ## Document conventions
 
@@ -44,7 +66,7 @@ This paper's subject is **technical/architectural policy enforcement inside an e
 
 ## Chart conventions (for when `assets/` is created)
 
-Categorical palette blue `#2a78d6` / orange `#eb6834` / aqua `#1baf7a` in fixed order, chart surface `#fcfcfb`, primary ink `#0b0b0b`, secondary ink `#52514e`, muted `#898781`, gridline `#e1e0d9`, light-mode only (static document asset, not an interactive artifact). Multi-line SVG text must use **separate `<text>` elements with explicit `y` per line**, not `<tspan dy="...">` — some lightweight SVG rasterizers (e.g. macOS `sips`) don't honor `tspan`/`dy` line breaks and silently overlap lines. Validate with `sips -s format png in.svg --out out.png` and read back the PNG (preserves true `viewBox` pixel dimensions); don't trust `qlmanage -t` for overflow checks, it renders into a fixed square thumbnail and can crop content that's actually within the `viewBox`.
+Categorical palette blue `#2a78d6` / orange `#eb6834` / aqua `#1baf7a` in fixed order, chart surface `#fcfcfb`, primary ink `#0b0b0b`, secondary ink `#52514e`, muted `#898781`, gridline `#e1e0d9`, light-mode only (static document asset, not an interactive artifact). Multi-line SVG text must use **separate `<text>` elements with explicit `y` per line**, not `<tspan dy="...">` — some lightweight SVG rasterizers (e.g. macOS `sips`) don't honor `tspan`/`dy` line breaks and silently overlap lines. **Arrowheads must be manually-drawn `<polygon>` triangles at the line's destination point, not `<marker>`/`marker-end`** — `sips` doesn't reliably render SVG markers either, and a diagram with invisible arrows looks fine in the raw SVG but broken in the validated PNG; this is the same class of issue as the `tspan`/`dy` caveat, so treat `sips` as supporting only basic shapes and text, not the fuller SVG feature set. Validate with `sips -s format png in.svg --out out.png` and read back the PNG (preserves true `viewBox` pixel dimensions); don't trust `qlmanage -t` for overflow checks, it renders into a fixed square thumbnail and can crop content that's actually within the `viewBox`.
 
 ## Open TODOs / gaps
 
@@ -53,4 +75,3 @@ Categorical palette blue `#2a78d6` / orange `#eb6834` / aqua `#1baf7a` in fixed 
 - **A few substantive research gaps still have no adequate source**, flagged in the prose itself rather than filled: shadow IT prevalence has no primary Gartner/Everest figure (Section 2.5), stale-contextual-attribute-at-decision-time has no dedicated source distinct from entitlement creep (Section 2.4), and no independent study compares breach cost/incident rate for centralized vs. fragmented enforcement (Section 3.3 falls back to IBM/Ponemon, flagged as vendor-tier).
 - **A few sources are still verified only via secondary reporting**, not the primary document directly: the Yakima Valley HHS OCR settlement (source 11) and ISO/IEC 27001:2022 Clause 5.2 (source 15, paywalled standard). GAO-17-549 (source 8) is cited only for its general finding, not the specific weakness counts, which remain unconfirmed against the primary PDF (GAO's site blocks non-browser fetches; not yet worked around).
 - **Title not finalized.** "Policy Enforcement in the Enterprise: From Fragmented Controls to a Unified Enforcement Framework" is a working title.
-- **No figures/charts yet.** Now that Section 2/3 prose is stable, good candidates: a diagram of the PDP/PEP/PAP/PIP architecture (Section 3.2), and a chart of the Zanzibar/OPA-adopter scale figures (Section 3.3).
