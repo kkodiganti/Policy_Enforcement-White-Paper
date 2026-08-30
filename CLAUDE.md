@@ -23,6 +23,33 @@ This paper's subject is **technical/architectural policy enforcement inside an e
 - `Policy-Enforcement-White-Paper.md` — the white paper itself. Working title: *Policy Enforcement in the Enterprise: From Fragmented Controls to a Unified Enforcement Framework*. First full draft complete, one editorial/tone pass done (see Status below). Thesis: most policy enforcement failures are not rule-design failures or training failures but infrastructure failures — policy logic is duplicated and drifts across services because there is no single enforcement point, no consistent timing model, and no named ownership connecting the written policy to the code that enforces it.
 - `Policy-Enforcement-White-Paper-Research.md` — the sourcing backbone: compiled links and figures, organized by taxonomy category (mirrors the white paper's Section 2 structure, the same way the Data-Quality paper's research file mirrors its taxonomy rather than organizing by industry).
 - `assets/` — 9 hand-authored SVG charts/diagrams, all embedded in the white paper and validated via `sips` (see inventory below), plus `assets/export-png/` holding the corresponding rendered PNGs per Chart conventions below.
+- `Policy-Enforcement-White-Paper.pdf` — the SSRN-ready PDF export of the white paper. A build artifact of the markdown, not hand-edited — regenerate via the recipe in "PDF export" below any time `Policy-Enforcement-White-Paper.md` or the `assets/*.svg` files change.
+- `pdf-template.html` — the reusable HTML/CSS shell the PDF export wraps the paper's content in (Letter page size, Georgia serif, 1in margins, centered byline styling). Edit this if the PDF's typography/layout needs to change.
+
+## PDF export
+
+The PDF is built by converting the markdown to an HTML fragment with `pandoc`, merging it into `pdf-template.html`, fixing image paths to absolute (pandoc/browser-relative paths don't resolve once the merged file moves), then printing to PDF with headless Chrome (no LaTeX engine is installed on this machine, so pandoc's default PDF path won't work). Full recipe, run from the repo root:
+
+```bash
+mkdir -p .build
+pandoc Policy-Enforcement-White-Paper.md -f markdown -t html --wrap=none -o .build/body.html
+python3 -c "
+import re
+tpl = open('pdf-template.html', encoding='utf-8').read()
+body = open('.build/body.html', encoding='utf-8').read()
+body = body.replace('src=\"assets/', 'src=\"file://$(pwd)/assets/')
+open('.build/paper.html', 'w', encoding='utf-8').write(tpl.replace('PAPER_BODY_PLACEHOLDER', body))
+"
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless --disable-gpu --no-sandbox \
+  --print-to-pdf="$(pwd)/Policy-Enforcement-White-Paper.pdf" \
+  --print-to-pdf-no-header --no-pdf-header-footer --virtual-time-budget=10000 \
+  "file://$(pwd)/.build/paper.html"
+```
+
+Then validate before trusting it: `pdfinfo Policy-Enforcement-White-Paper.pdf` for page count/size, and `pdftoppm -png -r 100 Policy-Enforcement-White-Paper.pdf .build/preview/page` + reading a few preview PNGs (title page, a page with a chart, the Sources page) — don't just trust that the command exited 0, since a broken image path fails silently as a blank/broken-image box in the PDF, not a shell error. `.build/` is gitignored; only the final PDF and `pdf-template.html` are tracked.
+
+**Two CSS gotchas already hit and fixed, worth knowing before touching `pdf-template.html`:** (1) don't use a broad selector like `p > em:only-child` to style a standalone-italic paragraph (e.g. the byline) — CSS `:only-child` ignores text-node siblings, so it also matches ordinary inline `*emphasis*` words in the middle of a sentence and centers them incorrectly; use a precise structural selector instead (this file uses `h1:first-of-type + p` and `#contact-information + p`, targeting the exact two byline paragraphs by position). (2) Image `src="assets/..."` paths in the pandoc output are relative to wherever the final merged HTML file sits, not to the repo root — since the merge happens in `.build/`, they must be rewritten to absolute `file://` paths or the images fail silently.
 
 ## Visual assets
 
