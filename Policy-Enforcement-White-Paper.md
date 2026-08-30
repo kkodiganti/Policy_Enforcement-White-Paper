@@ -1,6 +1,8 @@
 # **Policy Enforcement in the Enterprise: From Fragmented Controls to a Unified Enforcement Framework**
 
-*Krishna Murthy Kodiganti, Senior Lead Software Engineer, Capital One*
+*Krishna Murthy Kodiganti, Fellow IETE, Fellow IAENG, Fellow SCRS, Senior Member IEEE, Member ACM*
+
+*Senior Lead Software Engineer, Capital One*
 
 *The views expressed in this paper are the author's own and do not represent the views of Capital One.*
 
@@ -136,7 +138,9 @@ The same six problems — fragmentation, timing gaps, the semantic drift between
 
 # **Contact Information**
 
-*Krishna Murthy Kodiganti, Senior Lead Software Engineer, Capital One*
+*Krishna Murthy Kodiganti, Fellow IETE, Fellow IAENG, Fellow SCRS, Senior Member IEEE, Member ACM*
+
+*Senior Lead Software Engineer, Capital One*
 
 *The views expressed in this paper are the author's own and do not represent the views of Capital One.*
 
