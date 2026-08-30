@@ -2,10 +2,6 @@
 
 *Krishna Murthy Kodiganti, Fellow IETE, Fellow IAENG, Fellow SCRS, Senior Member IEEE, Member ACM*
 
-*Senior Lead Software Engineer, Capital One*
-
-*The views expressed in this paper are the author's own and do not represent the views of Capital One.*
-
 ---
 
 # **Abstract**
@@ -139,10 +135,6 @@ The same six problems — fragmentation, timing gaps, the semantic drift between
 # **Contact Information**
 
 *Krishna Murthy Kodiganti, Fellow IETE, Fellow IAENG, Fellow SCRS, Senior Member IEEE, Member ACM*
-
-*Senior Lead Software Engineer, Capital One*
-
-*The views expressed in this paper are the author's own and do not represent the views of Capital One.*
 
 ---
 
